@@ -1,0 +1,15 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <script src="https://unpkg.com/vue"></script>
+  <div id="app">
+    <p>{{ count }}</p>
+    <button @click="count += 1">Click</button>
+    <button @click="count += 10" v-if="count >= 10">Mega Click</button>
+    <button @click="autoClicker">Auto-clicker</button>
+  </div>
+  <script src="main.js"></script>
+</body>
