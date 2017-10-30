@@ -8,8 +8,10 @@ new Vue({
   },
   methods: {
     autoClicker: function autoClicker(rate, cost) {
-      this.count -= cost;
-      this.respectRate += rate;
+      if (this.count >= cost) {
+        this.count -= cost;
+        this.respectRate += rate;
+      }
     },
     thoughtsAndPrayers(n) {
       this.thoughtsAndPrayersCount += n;
@@ -17,7 +19,7 @@ new Vue({
   },
   computed: {
     displayCount() {
-      return this.count - (this.count % 1);
+      return Math.floor(this.count)
     },
   },
   beforeMount() {
